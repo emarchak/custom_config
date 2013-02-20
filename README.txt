@@ -2,7 +2,7 @@
 
 -- SUMMARY --
 
-The Custom Config module is a module intended for use by developers who are using the "installation profile" development strategy, as outlined in this post:
+The Custom Config module is a module intended for use by developers who are using the "installation profile" development strategy.
 
 
 -- REQUIREMENTS --
