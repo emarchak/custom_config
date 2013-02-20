@@ -87,7 +87,8 @@ function custom_config_init() {
   variable_set('custom_config_ran', TRUE);
 
   // Call function to run post install routines.
-  custom_config_postinstall();
+  module_load_include('inc', 'custom_config', 'custom_config.admin');
+  custom_config_postinstall_callback();
 }
 
 /**
