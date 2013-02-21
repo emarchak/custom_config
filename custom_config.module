@@ -8,12 +8,12 @@
 /**
  * Project machine name.
  */
-define('PROJECT_NAME', 'changeme');
+define('PROJECT_NAME', 'emponit');
 
 /**
  * Project label.
  */
-define('PROJECT_LABEL', 'Change Me');
+define('PROJECT_LABEL', 'Employees On iTunes');
 
 /**
  * Config admin path.
@@ -305,14 +305,15 @@ function custom_config_create_terms($vocab_name, $terms) {
     return;
   }
 
-  foreach ($terms as $term) {
+  foreach ($terms as $term_name) {
     // Try to find any matches for this term name.
-    $matches = taxonomy_get_term_by_name($term['name'], $vocab->machine_name);
+    $matches = taxonomy_get_term_by_name($term_name, $vocab->machine_name);
 
     // If none, let's create it.
     if (empty($matches)) {
       // Add vocab ID and a default weight.
-      $term += array(
+      $term = array(
+        'name' => $term_name,
         'vid' => $vocab->vid,
         'weight' => 0,
       );
